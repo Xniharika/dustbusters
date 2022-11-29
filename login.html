@@ -1,0 +1,254 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpg" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      body,
+      html {
+        background-color: #15191d;
+        height: 100%;
+        margin: 0;
+        color: #777;
+      }
+
+      .nav-container {
+        position: fixed;
+      }
+
+      .custom-navbar {
+        overflow: hidden;
+        background-color: #f1f1f1;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+
+      .custom-navbar a {
+        float: right;
+        display: block;
+        color: grey;
+        text-align: center;
+        padding: 24px 24px;
+        text-decoration: none;
+      }
+
+      .custom-navbar a:hover {
+        background: #dedede;
+        color: #67758a;
+      }
+
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bgimg-1 {
+        background-image: url("clean4.jpg");
+        min-height: 100%;
+        text-align: center;
+      }
+
+      @media only screen and (max-device-width: 1024px) {
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+          background-attachment: scroll;
+        }
+      }
+      .textbox {
+        color: white;
+        font-size: initial;
+        text-align: center;
+        border: none;
+        background-color: #303b46;
+        width: 100%;
+        height: 50px;
+        transition: 0.3s;
+      }
+      .textbox:hover,
+      .textarea:hover {
+        box-shadow: #3c3d3e 0px 0px 16px;
+      }
+      textarea .custom-textarea {
+        color: white;
+        font-size: initial;
+        text-align: center;
+        border: none;
+        background-color: #303b46;
+        width: 100%;
+        transition: 0.3s;
+      }
+      button {
+        margin: 30px;
+        border: none;
+        background-color: #ffffff;
+        color: rgb(215, 186, 124);
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 10px;
+        transition: 0.3s;
+      }
+      button:hover {
+        background-color: #ffffff;
+        color: #67758a;
+        box-shadow: rgba(106, 71, 24, 0.838) 0px 0px 60px;
+      }
+      .box {
+        transition-timing-function: ease;
+        transition: 0.5s;
+      }
+      .box:hover {
+        border-radius: 15%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="custom-navbar">
+        <a
+          style="
+            float: left;
+            padding-left: 20px;
+            padding-top: 15px;
+            margin-bottom: -5px;
+          "
+          href="index.html"
+          ><img height="32" src="name.png"
+        /></a>
+        <a href="Signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="service.html"> Our Services </a>
+        <a href="aboutus.html"> About Us </a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+    <div>
+      <div class="bgimg-1">
+        <div
+          class="box"
+          style="
+            position: absolute;
+            background-color: #dac5ab;
+            width: 300px;
+            left: 40%;
+            top: 25%;
+            padding: 20px;
+            box-shadow: rgb(0 0 0) 0px 0px 60px;
+          "
+        >
+          <h1>LOGIN</h1>
+          <form style="margin: 0px !important">
+            <div
+              class="formcontainer"
+              style="max-height: 340px;"
+              height="100%"
+            >
+              <table style="width: 100%; position: relative">
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        class="textbox"
+                        type="text"
+                        name=""
+                        placeholder="E-MAIL ID" required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="textbox"
+                        type="password"
+                        placeholder="PASSWORD" maxlength="10" required
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button style="position: relative; top: 60%">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style="
+          font-family: 'Times New Roman';
+          color: rgb(0, 0, 0);
+          background-color: #cecbcb;
+          text-align: center;
+          text-align: justify;
+          padding: 20px 0;
+          margin: 0;
+        "
+      >
+        <div>
+          <div class="container" style="text-align: center">
+            <div>
+              <div>
+                <h2>Contact Us</h2>
+              </div>
+              <div class="row">
+                <div>
+                  <form action="submit.xlsx">
+                    <label for="fname">First Name</label>
+
+                    <input
+                      type="text"
+                      id="fname"
+                      name="firstname"
+                      placeholder="Your name.."
+                    />
+
+                    <label for="lname">Last Name</label>
+
+                    <input
+                      type="text"
+                      id="lname"
+                      name="lastname"
+                      placeholder="Your last name.."
+                    />
+
+                    <label for="question">Question?</label>
+                    <textarea
+                      id="question"
+                      name="question"
+                      placeholder="Write something.."
+                      style="height: 30px"
+                    ></textarea>
+                    <input type="submit" value="Submit" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2>Social</h2>
+
+              <a href="https://www.instagram.com/"
+                ><img width="30" src="logo/insta logo.png" /></a
+              >&nbsp &nbsp &nbsp
+              <a href="https://www.facebook.com/"
+                ><img width="30" src="logo/fb.png" /></a
+              >&nbsp &nbsp &nbsp
+              <a href="https://twitter.com/i/flow/login"
+                ><img width="30" src="logo/twitter.png"
+              /></a>
+
+              <br />
+              +91 9782374974 <br />
+              dustbusters@gmail.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

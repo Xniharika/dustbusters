@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body,
+      html {
+        background-color: #e5e4e4;
+        height: 95%;
+        margin: 0;
+        color: rgb(0, 0, 0);
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      #myBtn {
+        display: none; 
+        position: fixed; 
+        bottom: 20px; 
+        right: 30px; 
+        z-index: 99; 
+        border: none; 
+        outline: none; 
+        background-color: rgba(77, 76, 77, 0.223); 
+        color: white; 
+        cursor: pointer; 
+        padding: 15px; 
+        border-radius: 10px; 
+        font-size: 18px; 
+      }
+
+      #myBtn:hover {
+        background-color: rgb(161, 156, 156);
+      }
+      .box {
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 30px;
+      }
+      .bbox {
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .box img {
+        width: 100%;
+        height: auto;
+        transform-origin: bottom center;
+        transform: perspective(500px) rotatex(0);
+        transition: 0.75s all ease;
+      }
+
+      .bbox img {
+        transition: 0.75s all ease;
+      }
+      .box:hover img {
+        transform: perspective(500px) rotateX(50deg);
+      }
+
+      .box .box_content {
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-origin: top centre;
+        transform: perspective(500px) rotatex(-50deg);
+        opacity: 0;
+        background: linear-gradient(
+          to right,
+          rgba(195, 214, 217, 0.8),
+          rgb(145, 133, 133)
+        );
+        transition: 0.75s all ease;
+      }
+
+      .bbox .bbox_content {
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-origin: top centre;
+        transform: perspective(500px) rotatex(-50deg);
+        opacity: 0;
+        background: linear-gradient(
+          to right,
+          rgba(3, 3, 3, 0.8),
+          rgba(107, 107, 107, 0.726)
+        );
+        transition: 0.75s all ease;
+      }
+
+      .box:hover .box_content {
+        opacity: 1;
+        transform: perspective(500px) rotateX(0);
+      }
+
+      .bbox:hover .bbox_content {
+        opacity: 1;
+        transform: perspective(500px) rotateX(0);
+      }
+
+      .box .box_content .content .title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-transform: capitalize;
+      }
+
+      .box .box_content .content .pst {
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .head1 {
+        text-align: center;
+        color: rgb(122, 182, 134);
+        font-size: xxx-large;
+        font-stretch: semi-expanded;
+        font-weight: bolder;
+        padding-bottom: 20px;
+        padding-top: 80px;
+        font-family: sans-serif;
+        text-transform: uppercase;
+      }
+
+      .combo {
+        color: #fff;
+        font-size: 50px;
+        font-weight: bolder;
+        text-align: center;
+        text-transform: uppercase;
+        padding-top: 50px;
+      }
+
+      .table {
+        font-family: "poppins", sans-serif;
+        box-sizing: content-box;
+        width: 900px;
+        overflow: hidden;
+        margin: 5% auto;
+        padding-bottom: 15px;
+        padding-top: 10px;
+      }
+
+      .single-price {
+        width: 33%;
+        background: rgba(59, 59, 59, 0.418);
+        float: left;
+        margin-top: 2%;
+
+        text-align: center;
+        transition: 0.75s;
+      }
+      .price {
+        width: 120px;
+        height: 60px;
+        border-radius: 15%;
+        border: 2px bisque;
+        margin: 5% auto 0 auto;
+        text-align: center;
+      }
+      .deals {
+        align-items: center;
+        margin-top: 10%;
+      }
+      .single-price h1 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 3;
+        text-transform: uppercase;
+      }
+      .price h2 {
+        font-size: 25px;
+        color: #fff;
+        padding-top: 10px;
+      }
+
+      .deals h4 {
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+        color: #fff;
+        line-height: 1;
+        padding: 10px;
+      }
+      .single-price:hover {
+        background-color: rgb(206, 190, 220);
+        color: #fff;
+        box-shadow: 1px 1px 20px rgb(0, 0, 0);
+        transform: scale(1.1);
+      }
+      .single-price:hover .price {
+        border-color: #fff;
+      }
+      .single-price a {
+        text-decoration: none;
+        background: rgb(160, 183, 180);
+        color: #fff;
+        padding: 10px 40px;
+        display: inline-block;
+        margin: 10% auto;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .single-price:hover a {
+        background: #262626;
+        color: #fff;
+        border-radius: 20%;
+      }
+      .service {
+        align-content: center;
+      }
+
+      .bbox {
+        align-content: center;
+      }
+
+      .cleaning {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding: 2%;
+        padding-bottom: 5%;
+      }
+      .custom-caption {
+        background-color: #cecbcb91;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+      .room {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding: 2%;
+        padding-bottom: 5%;
+      }
+      .other {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding: 2%;
+        padding-bottom: 5%;
+      }
+
+      .nav_container {
+        position: fixed;
+      }
+
+      .custom-navbar {
+        overflow: hidden;
+        background-color: #f1f1f1;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+
+      h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      .custom-navbar a {
+        float: right;
+        display: block;
+        color: grey;
+        text-align: center;
+        padding: 24px 24px;
+        text-decoration: none;
+      }
+
+      .custom-navbar a:hover {
+        background: #dedede;
+        color: #67758a;
+        height: 100%;
+      }
+      .carousel-caption {
+        color: #1c4280;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <script type="text/javascript">
+      
+      mybutton = document.getElementById("myBtn");
+
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <div>
+      <div class="custom-navbar">
+        <a
+          style="
+            float: left;
+            padding-left: 20px;
+            padding-top: 20px;
+            margin-bottom: -5px;
+          "
+          href="index.html"
+          ><img height="32" src="name.png"
+        /></a>
+        <a href="Signup.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="service.html"> Our Services </a>
+        <a href="aboutus.html"> About Us </a>
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+    <div>
+      <h1 class="head1">Our Services</h1>
+      <div class="container">
+        <div class="card">
+          <nav class="card-header">
+            <div
+              class="nav nav-tabs justify-content-center"
+              id="nav-tab"
+              role="tablist"
+            >
+              <a
+                class="nav-link active"
+                id="nav-bedroom-tab"
+                data-bs-toggle="tab"
+                href="#bedroom"
+                role="tab"
+                aria-controls="nav-bedroom"
+                aria-selected="true"
+                >Bedroom Cleaning</a
+              >
+              <a
+                class="nav-link"
+                id="nav-kitchen-tab"
+                data-bs-toggle="tab"
+                href="#kitchen"
+                role="tab"
+                aria-controls="nav-kitchen"
+                aria-selected="false"
+                >Kitchen Cleaning</a
+              >
+              <a
+                class="nav-link"
+                id="nav-lobby-tab"
+                data-bs-toggle="tab"
+                href="#lobby"
+                role="tab"
+                aria-controls="nav-lobby"
+                aria-selected="false"
+                >Lobby Cleaning</a
+              >
+            </div>
+          </nav>
+          <div class="card-body tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="bedroom"
+              role="tabpanel"
+              aria-labelledby="nav-bedroom-tab"
+            >
+              <div
+                id="carouselBedroom"
+                class="carousel slide carousel-fade"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="images/dusting.jpg"
+                      class="d-block w-100"
+                      alt="dusting"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Dusting</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/mattress.jpg"
+                      class="d-block w-100"
+                      alt="mattress"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Mattress Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/c2.jpg" class="d-block w-100" alt="sofa" />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Sofa Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/washroomclean.jpg"
+                      class="d-block w-100"
+                      alt="sofa"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Washroom Cleaning</h1>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselBedroom"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselBedroom"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="kitchen"
+              role="tabpanel"
+              aria-labelledby="nav-kitchen-tab"
+            >
+              <div
+                id="carouselKitchen"
+                class="carousel slide carousel-fade"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/chimney.jpg" class="d-block w-100" alt="food" />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Chimney Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/utensils.jpg"
+                      class="d-block w-100"
+                      alt="utensil"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Utensils Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/b1.jpg"
+                      class="d-block w-100"
+                      alt="surface"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Kitchen Surface Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/kitchenclean.jpg"
+                      class="d-block w-100"
+                      alt="sofa"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">
+                        Kitchen Appliances Cleaning
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselKitchen"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselKitchen"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="lobby"
+              role="tabpanel"
+              aria-labelledby="nav-lobby-tab"
+            >
+              <div
+                id="carouselLobby"
+                class="carousel slide carousel-fade"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="images/window1.jpg"
+                      class="d-block w-100"
+                      alt="utensil"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Glass and Mirror Shinning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/ac.jpg" class="d-block w-100" alt="ac" />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Air-conditioner Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/wet-mopping.jpg"
+                      class="d-block w-100"
+                      alt="surface"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Floor Cleaning</h1>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/carpet.jpg"
+                      class="d-block w-100"
+                      alt="carpet"
+                    />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 class="custom-caption">Carpet Cleaning</h1>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselLobby"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselLobby"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr color="white" />
+    <div>
+      <div style="background-color: #0a1424; padding-bottom: 20px; margin: 0">
+        <div class="combo">Combo Offers</div>
+        <div class="table">
+          <div class="single-price">
+            <h1>House Cleaning</h1>
+            <div class="price">
+              <h2>₹3999/-</h2>
+            </div>
+            <div class="deals">
+              <h4>Kitchen Cleaning</h4>
+              <h4>Bathroom Cleaning</h4>
+              <h4>Sofa Cleaning</h4>
+              <h4>Dusting</h4>
+              <h4>Floor Cleaning</h4>
+            </div>
+            <a href="payment.html">BOOK</a>
+          </div>
+
+          <div class="single-price">
+            <h1>Bath & Room</h1>
+            <div class="price">
+              <h2>₹2299/-</h2>
+            </div>
+            <div class="deals">
+              <h4>Bathroom Cleaning</h4>
+              <h4>Mattress Cleaning</h4>
+              <h4>Floor Cleaning</h4>
+              <h4>Window Cleaning</h4>
+              <h4>Dusting</h4>
+            </div>
+            <a href="payment.html">BOOK</a>
+          </div>
+
+          <div class="single-price">
+            <h1>Room & AC</h1>
+            <div class="price">
+              <h2>₹1699/-</h2>
+            </div>
+            <div class="deals">
+              <h4>Dusting</h4>
+              <h4>Floor Cleaning</h4>
+              <h4>Mattress Cleaning</h4>
+              <h4>Carpet Cleaning</h4>
+              <h4>AC Servicing</h4>
+            </div>
+            <a href="payment.html">BOOK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr color="white" />
+    <div>
+      <div class="combo" style="color: #7371fc">Customer Reviews</div>
+      <div class="container">
+        <div
+          class="row justify-content-md-center"
+          style="padding-top: 20px; padding-bottom: 10rem"
+        >
+          <div class="col-3">
+            <div class="card">
+              <div class="row">
+                <div class="col-2">
+                  <img
+                    src="images/ava1.jpg"
+                    alt="avatar1"
+                    height="50"
+                    width="50"
+                  />
+                </div>
+                <div class="col-7">
+                  <div class="row">
+                    <div class="col">Kashish Kapoor</div>
+                  </div>
+                  <div class="row">
+                    <label style="font-size: 10px">November 13, 2022</label>
+                  </div>
+                </div>
+                <div class="col-3" style="display: flex; justify-items: center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    width="24"
+                  >
+                    <path
+                      d="M7.775 19.3 8.9 14.5l-3.725-3.225 4.9-.425L12 6.325l1.925 4.525 4.9.425L15.1 14.5l1.125 4.8L12 16.75Z"
+                    />
+                  </svg>
+                  5
+                </div>
+              </div>
+              <div class="row" style="padding: 20px">
+                <div class="col">It was amazing</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="row">
+                <div class="col-2">
+                  <img
+                    src="images/ava2.jpg"
+                    alt="avatar2"
+                    height="50"
+                    width="50"
+                  />
+                </div>
+                <div class="col-7">
+                  <div class="row">
+                    <div class="col">Rabina Yadav</div>
+                  </div>
+                  <div class="row">
+                    <label style="font-size: 10px">October 17, 2022</label>
+                  </div>
+                </div>
+                <div class="col-3" style="display: flex; justify-items: center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    width="24"
+                  >
+                    <path
+                      d="M7.775 19.3 8.9 14.5l-3.725-3.225 4.9-.425L12 6.325l1.925 4.525 4.9.425L15.1 14.5l1.125 4.8L12 16.75Z"
+                    />
+                  </svg>
+                  4
+                </div>
+              </div>
+              <div class="row" style="padding: 20px">
+                <div class="col">Very professional and friendly.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="row">
+                <div class="col-2">
+                  <img
+                    src="images/ava3.webp"
+                    alt="avatar3"
+                    height="50"
+                    width="50"
+                  />
+                </div>
+                <div class="col-7">
+                  <div class="row">
+                    <div class="col">Ayush Gupta</div>
+                  </div>
+                  <div class="row">
+                    <label style="font-size: 10px">October 12, 2022</label>
+                  </div>
+                </div>
+                <div class="col-3" style="display: flex; justify-items: center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    width="24"
+                  >
+                    <path
+                      d="M7.775 19.3 8.9 14.5l-3.725-3.225 4.9-.425L12 6.325l1.925 4.525 4.9.425L15.1 14.5l1.125 4.8L12 16.75Z"
+                    />
+                  </svg>
+                  5
+                </div>
+              </div>
+              <div class="row" style="padding: 20px">
+                <div class="col">Nice and polite and good work</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        style="
+          font-family: 'Times New Roman';
+          color: rgb(0, 0, 0);
+          background-color: #cecbcb;
+          text-align: center;
+          text-align: justify;
+          padding: 20px 0;
+          margin: 0;
+        "
+      >
+        <div>
+          <div class="container" style="text-align: center">
+            <div>
+              <div>
+                <h2>Contact Us</h2>
+              </div>
+              <div class="row">
+                <div>
+                  <form action="submit.xlsx">
+                    <label for="fname">First Name</label>
+
+                    <input
+                      type="text"
+                      id="fname"
+                      name="firstname"
+                      placeholder="Your name.."
+                    />
+
+                    <label for="lname">Last Name</label>
+
+                    <input
+                      type="text"
+                      id="lname"
+                      name="lastname"
+                      placeholder="Your last name.."
+                    />
+
+                    <label for="question">Question?</label>
+                    <textarea
+                      id="question"
+                      name="question"
+                      placeholder="Write something.."
+                      style="height: 30px"
+                    ></textarea>
+                    <input type="submit" value="Submit" />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2>Social</h2>
+
+              <a href="https://www.instagram.com/"
+                ><img width="30" src="logo/insta logo.png" /></a
+              >&nbsp &nbsp &nbsp
+              <a href="https://www.facebook.com/"
+                ><img width="30" src="logo/fb.png" /></a
+              >&nbsp &nbsp &nbsp
+              <a href="https://twitter.com/i/flow/login"
+                ><img width="30" src="logo/twitter.png"
+              /></a>
+
+              <br />
+              +91 9782374974 <br />
+              dustbusters@gmail.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

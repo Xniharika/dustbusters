@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.jpg" />
+    <title>dustbusters.com</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      body,
+      html {
+        background-color: #e5e4e4;
+        height: 95%;
+        margin: 0;
+        color: rgb(0, 0, 0);
+      }
+
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
+
+      #myBtn:hover {
+        background-color: rgb(255, 255, 255);
+      }
+
+      .nav-container {
+        position: fixed;
+      }
+
+      .navbar {
+        overflow: hidden;
+
+        background-color: #f1f1f1;
+
+        position: fixed;
+
+        top: 0;
+
+        width: 100%;
+      }
+
+      .navbar a {
+        float: right;
+
+        display: block;
+
+        color: grey;
+
+        text-align: center;
+
+        padding: 24px 24px;
+
+        text-decoration: none;
+      }
+
+      .navbar a:hover {
+        background: #dedede;
+
+        color: #67758a;
+      }
+
+      .navlink:hover {
+        display: inline-block;
+        background-color: #7371fc;
+        color: white;
+        padding: 9px 18px;
+      }
+
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        position: relative;
+
+        opacity: 1;
+
+        background-attachment: fixed;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        background-size: cover;
+      }
+
+      .bgimg-1 {
+        background-image: url("cover.jpg");
+
+        min-height: 100%;
+      }
+
+      .bgimg-2 {
+        background-image: url("clean1.jpg");
+
+        min-height: 400px;
+      }
+
+      .bgimg-3 {
+        background-image: url("clean.jpg");
+
+        min-height: 400px;
+      }
+
+      .caption {
+        position: absolute;
+
+        left: 0;
+
+        top: 50%;
+
+        width: 100%;
+
+        text-align: center;
+
+        color: #000;
+      }
+
+      .caption span.border {
+        border: none;
+
+        background-color: #386fa6;
+
+        color: #fff;
+
+        padding: 18px;
+
+        font-size: 25px;
+
+        letter-spacing: 10px;
+      }
+
+      .caption button.border {
+        border: none;
+
+        background-color: #15191d;
+
+        color: #fff;
+
+        padding: 18px;
+
+        font-size: 25px;
+
+        letter-spacing: 10px;
+      }
+
+      .caption button.border:hover {
+        background-color: #191e23;
+
+        color: #67758a;
+      }
+
+      h3 {
+        letter-spacing: 5px;
+
+        text-transform: uppercase;
+
+        color: #15191d;
+      }
+
+      @media only screen and (max-device-width: 1024px) {
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+          background-attachment: scroll;
+        }
+        input[type="text"],
+        select,
+        textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        input[type="submit"] {
+          background-color: #4caf50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          cursor: pointer;
+        }
+        input[type="submit"]:hover {
+          background-color: #45a049;
+        }
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 10px;
+        } 
+        .column {
+          float: left;
+          width: 50%;
+          margin-top: 6px;
+          padding: 20px;
+        }      
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .column,
+        input[type="submit"] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+
+    <script>
+      var mybutton = document.getElementById("myBtn");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+
+    <div class="bgimg-1">
+      <div class="caption"></div>
+    </div>
+
+    <div
+      style="
+        color: #777;
+        background-color: #b2e6d1;
+        text-align: center;
+        padding: 50px 80px;
+        text-align: justify;
+      "
+    >
+      <h3 style="text-align: center; color: rgb(103, 93, 93)">
+        <b> HYGIENE AND WELLNESS </b>
+      </h3>
+    </div>
+
+    <div class="bgimg-2">
+      <div class="caption" id="header-1">
+        <span
+          class="border"
+          style="background-color: transparent; font-size: 25px; color: #a0a0a0"
+          >Who are we?
+        </span>
+      </div>
+    </div>
+
+    <div style="position: relative">
+      <div
+        style="
+          color: rgb(123, 65, 34);
+          background-color: #f0ead7;
+          text-align: center;
+          padding: 50px 80px;
+          text-align: justify;
+        "
+      >
+        <p>
+          <center>
+            Dustbusters is a platform which enables users to conveniently
+            schedule reputable and high-quality services, including
+            home cleaning,<br />  handymen, appliance repair, and more, that are conveniently provided at their homes by qualified
+            specialists. 
+            The mission of <br /> Dustbusters is to enable millions of professionals
+            globally to provide services at home in a way that has never  been
+            done before.
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <div class="bgimg-3">
+      <div class="caption">
+        <span
+          class="border"
+          style="background-color: transparent; font-size: 25px; color: #5e5d5d"
+          ></span
+        >
+      </div>
+    </div>
+
+    <div style="position: relative">
+      <center>
+        <div
+          class="caption"
+          style="
+            height: fit-content;
+            width: fit-content;
+            position: relative;
+            top: 0px;
+          "
+        >
+          <div class="slider" style="height: 600px">
+            <div
+              id="image1"
+              style="
+                transform: scale(0.8);
+                height: -webkit-fill-available;
+                display: none;
+              "
+            >
+              <img
+                src="images/1.png"
+                style="
+                  height: -webkit-fill-available;
+                  border: 0px solid #15191d;
+                  border-radius: 30px;
+                  box-shadow: rgb(230, 230, 230) 0px 0px 20px;
+                "
+              />
+            </div>
+
+            <div
+              id="image2"
+              style="
+                transform: scale(0.8);
+                height: -webkit-fill-available;
+                display: none;
+              "
+            >
+              <img
+                src="images/2.jpg"
+                style="
+                  height: -webkit-fill-available;
+                  border: 0px solid #15191d;
+                  border-radius: 30px;
+                  box-shadow: rgb(230, 230, 230) 0px 0px 20px;
+                "
+              />
+            </div>
+
+            <div
+              id="image3"
+              style="
+                transform: scale(0.8);
+                height: -webkit-fill-available;
+                display: none;
+              "
+            >
+              <img
+                src="images/3.jpg"
+                style="
+                  height: -webkit-fill-available;
+                  border: 0px solid #15191d;
+                  border-radius: 30px;
+                  box-shadow: rgb(230, 230, 230) 0px 0px 20px;
+                "
+              />
+            </div>
+
+            <div
+              id="image4"
+              style="
+                transform: scale(0.8);
+                height: -webkit-fill-available;
+                display: none;
+              "
+            >
+              <img
+                src="images/4.png"
+                style="
+                  height: -webkit-fill-available;
+                  border: 0px solid #15191d;
+                  border-radius: 30px;
+                  box-shadow: rgb(230, 230, 230) 0px 0px 20px;
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </center>
+    </div>
+    <div
+      style="
+        color: #ddd;
+        background-color: #96cfc1;
+        text-align: center;
+        padding: 50px 80px;
+        text-align: justify;
+      "
+    >
+      <p>
+        We pursue to build a relationship of trustworthiness and conviction with
+        our customers. Down the line, we see ourselves as leader of the Facility
+        Management Company in industry.
+      </p>
+    </div>
+    <div class="bgimg-1"></div>
+
+    <br />
+    <br />
+    <br />
+    <h1
+      align="center"
+      style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+      id="about"
+    >
+      BENEFITS OF DUSTBUSTERS
+    </h1>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <table align="center" width="70%">
+      <tr>
+        <td align="right"><img width="500px" src="images/2.png" /></td>
+        <td align="left">
+          <ul style="list-style: none">
+            <li
+              style="
+                font-size: 48px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              "
+            >
+              Highly-Trained Staff
+            </li>
+            <br />
+            <li
+              style="
+                font-size: 20px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              "
+            >
+              <b
+                >You can trust that our staff will be well-suited for cleaning
+                your house.</b
+              >
+            </li>
+          </ul>
+          <ul
+            style="
+              font-size: 15px;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              list-style: none;
+            "
+          >
+            <li>Our team conducts:</li>
+            <br />
+            <li>- Background Checks</li>
+            <br />
+            <li>- Comprehensive Interviews</li>
+            <br />
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    <table align="center" width="70%">
+      <tr>
+        <td align="left">
+          <ul style="list-style: none">
+            <li
+              style="
+                font-size: 50px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              "
+            >
+              Our Green Practices
+            </li>
+            <br />
+            <li
+              style="
+                font-size: 20px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              "
+            >
+              <b
+                >We use certified products and equipment and our customized
+                ‘critical path’ service plans include:</b
+              >
+            </li>
+          </ul>
+          <ul
+            style="
+              font-size: 15px;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              list-style: none;
+            "
+          >
+            <li>Certified Environmentally Approved Products & Supplies</li>
+            <br />
+            <li>Certified Eco-Friendly Equipment</li>
+            <br />
+            <li>Recycling</li>
+          </ul>
+        </td>
+        <td align="right"><img width="500px" src="images/3.png" /></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div
+      style="
+        color: rgb(0, 0, 0);
+        background-color: #cecbcb;
+        text-align: center;
+        text-align: justify;
+        padding: 20px 0;
+      "
+    >
+      <div>
+        <div class="container" style="text-align: center">
+          <div>
+            <div class="col-50">
+              <h2>Contact Us</h2>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <form action="submit.xlsx">
+                  <label for="fname">First Name</label>
+
+                  <input
+                    type="text"
+                    id="fname"
+                    name="firstname"
+                    placeholder="Your name.."
+                  />
+
+                  <label for="lname">Last Name</label>
+
+                  <input
+                    type="text"
+                    id="lname"
+                    name="lastname"
+                    placeholder="Your last name.."
+                  />
+
+                  <label for="question">Question?</label>
+                  <textarea
+                    id="question"
+                    name="question"
+                    placeholder="Write something.."
+                    style="height: 30px"
+                  ></textarea>
+                  <input type="submit" value="Submit" />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2>Social</h2>
+
+            <a href="https://www.instagram.com/"
+              ><img width="30" src="logo/insta logo.png" /></a
+            >&nbsp &nbsp &nbsp
+            <a href="https://www.facebook.com/"
+              ><img width="30" src="logo/fb.png" /></a
+            >&nbsp &nbsp &nbsp
+            <a href="https://twitter.com/i/flow/login"
+              ><img width="30" src="logo/twitter.png"
+            /></a>
+
+            <br />
+            +91 9782374974 <br />
+            dustbusters@gmail.com
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-container">
+      <div class="navbar">
+        <a
+          style="
+            float: left;
+            padding-left: 20px;
+            padding-top: 15px;
+            margin-bottom: -10px;
+          "
+          href="index.html"
+          ><img height="32" src="name.png"
+        /></a>
+        <a href="Signup.html">Signup</a>
+        <a href="login.html">Login</a>
+        <a href="service.html"> Our Services </a>
+        <a href="aboutus.html"> About Us </a>
+        <a href="">Home</a>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+      async function startslideshow() {
+        for (var i = 1; i < 5; i++) {
+          $("#image" + i.toString()).show();
+          await sleep(2000);
+          $("#image" + i.toString()).hide();
+        }
+      }
+      startslideshow();
+      setInterval(startslideshow, 8000);
+    </script>
+  </body>
+</html>

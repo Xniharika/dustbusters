@@ -1,0 +1,322 @@
+<html>
+
+<head>
+    <title>SignUp</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body,
+        html {
+            background-color: #15191d;
+            height: 100%;
+            margin: 0;
+            color: #777;
+
+        }
+
+        .nav-container {
+            position: fixed;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: grey;
+            text-align: center;
+            padding: 24px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background: #dedede;
+            color: #67758a;
+        }
+
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            position: relative;
+            opacity: 0.85;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bgimg-1 {
+            background-image: url("signup.jpg");
+            min-height: 100%;
+        }
+
+        @media only screen and (max-device-width: 1024px) {
+
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+
+        .textbox {
+            color: rgb(0, 0, 0);
+            font-size: initial;
+            text-align: center;
+            border: none;
+            background-color: #ffffff;
+            width: 100%;
+            height: 50px;
+            transition: 0.3s;
+        }
+
+        .textbox:hover,
+        textarea:hover {
+            box-shadow: #3c3d3e 0px 0px 16px;
+        }
+
+        textarea.custom-textarea {
+            padding-top: 5%;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            background-color: #ffffff;
+            width: 100%;
+            height: 60px;
+            transition: 0.3s;
+        }
+
+        button {
+            border: none;
+            background-color: #bdbdbd;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            color: #67758a;
+            box-shadow: rgb(0 0 0) 0px 0px 60px;
+        }
+
+        .box {
+            transition-timing-function: ease;
+            transition: 0.5s;
+        }
+
+        .box:hover {
+            border-radius: 15%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgimg-1">
+        <center>
+            <div class="container" style="padding: 100;/* height: 800px; */">
+
+                <form style="margin: 0px!important;">
+                    <div class="box"
+                        style="position: relative;background-color: #daedcd;height: 600px;width: 500px;top: 25%;box-shadow: rgb(0 0 0) 0px 0px 60px;">
+                        <br>
+                        <h1>Sign-Up</h1>
+                        <div class="formcontainer" style="
+    max-height: 340px;
+    position: absolute;
+    overflow-y: scroll;scrollbar-color: red yellow;
+" height="100%">
+                            <font>
+
+
+
+                                <table style="
+    position: relative;
+    padding: 10px;
+    border-spacing: 15px;
+">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input class="textbox" type="text" name="" placeholder="FIRST NAME"
+                                                    required>
+                                            </td>
+                                            <td>
+                                                <input class="textbox" type="text" name="" placeholder="LAST NAME"
+                                                    required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" width="40px">
+                                                <input class="textbox" type="number" name="quantity" id="quantity"
+                                                    placeholder="MOBILE NUMBER" min="6000000000" max="9999999999"
+                                                    required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <input class="textbox" type="text" name="" placeholder="E-MAIL ADDRESS"
+                                                    required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" name="gender" value="male" required>MALE
+
+                                            </td>
+                                            <td>
+
+                                                <input type="radio" name="gender" value="female" required>FEMALE
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><textarea class="custom-textarea" name="address"
+                                                    placeholder="ADDRESS" required></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+
+                                                <select name="STATE"
+                                                    style="color: rgb(185, 184, 184);font-size: initial;text-align: center;border: none;background-color: #ffffff;width: 100%;height: 50px;">
+                                                    <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+                                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                    <option value="Assam">Assam</option>
+                                                    <option value="Bihar">Bihar</option>
+                                                    <option value="Chandigarh">Chandigarh</option>
+                                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                                    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli
+                                                    </option>
+                                                    <option value="Daman &amp; Diu">Daman &amp; Diu</option>
+                                                    <option value="Delhi" selected>Delhi</option>
+                                                    <option value="Goa">Goa</option>
+                                                    <option value="Gujarat">Gujarat</option>
+                                                    <option value="Haryana">Haryana</option>
+                                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                    <option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option>
+                                                    <option value="Jharkhand">Jharkhand</option>
+                                                    <option value="Karnataka">Karnataka</option>
+                                                    <option value="Kerala">Kerala</option>
+                                                    <option value="Lakshadweep">Lakshadweep</option>
+                                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                    <option value="Maharashtra">Maharashtra</option>
+                                                    <option value="Manipur">Manipur</option>
+                                                    <option value="Meghalaya">Meghalaya</option>
+                                                    <option value="Mizoram">Mizoram</option>
+                                                    <option value="Nagaland">Nagaland</option>
+                                                    <option value="Odisha">Odisha</option>
+                                                    <option value="Punjab">Punjab</option>
+                                                    <option value="Puducherry">Puducherry</option>
+                                                    <option value="Rajasthan">Rajasthan</option>
+                                                    <option value="Sikkim">Sikkim</option>
+                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                    <option value="Telangana">Telangana</option>
+                                                    <option value="Tripura">Tripura</option>
+                                                    <option value="Uttarakhand">Uttarakhand</option>
+                                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                    <option value="West Bengal">West Bengal</option>
+                                                </select>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><input class="textbox" type="number" name="pincode"
+                                                    placeholder="PIN CODE" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="textbox" type="password" maxlength="10"
+                                                    placeholder="PASSWORD" required></td>
+                                            <td><input class="textbox" type="password" maxlength="10"
+                                                    placeholder="CONFIRM PASSWORD" required></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </font>
+                        </div><button style="position: relative;top:63%;">Signup</button>
+                </form>
+                <font>
+
+                </font>
+
+            </div>
+    </div>
+    </center>
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#e0e1e1;text-align:center;text-align: justify;">
+        </div>
+    </div>
+    <div>
+        <div class="navbar">
+            <a style="float: left;padding-left: 20px;padding-top: 15px;margin-bottom: -20px;" href="index.html"><img
+                    height="32" src="name.png"></a>
+            <a href="Signup.html">Signup</a>
+            <a href="login.html">Login</a>
+            <a href="service.html"> Our Services </a>
+            <a href="aboutus.html"> About Us </a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+    </div>
+    <div>
+        <div
+            style="font-family:'Times New Roman' ;color:rgb(0, 0, 0);background-color:#cecbcb;text-align:center;text-align: justify;padding: 20px 0;margin: 0;">
+            <div>
+                <div class="container" style="text-align:center">
+                    <div>
+                        <div>
+                            <h2>Contact Us</h2>
+
+                        </div>
+                        <div class="row">
+                            <div>
+
+                                <form action="submit.xlsx">
+
+                                    <label for="fname">First Name</label>
+
+                                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+                                    <label for="lname">Last Name</label>
+
+                                    <input type="text" id="lname" name="lastname" placeholder="Your last name.."
+                                        required>
+
+
+                                    <label for="question">Question?</label>
+                                    <textarea id="question" name="question" placeholder="Write something.."
+                                        style="height:30px"></textarea>
+                                    <input type="submit" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+
+                    <h2>Social</h2>
+
+                    <a href="https://www.instagram.com/"><img width="30" src="logo/insta logo.png"></a>&nbsp &nbsp &nbsp
+                    <a href="https://www.facebook.com/"><img width="30" src="logo/fb.png"></a>&nbsp &nbsp &nbsp
+                    <a href="https://twitter.com/i/flow/login"><img width="30" src="logo/twitter.png"></a>
+
+                    <br>
+                    +91 9782374974 <br>
+                    dustbusters@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
